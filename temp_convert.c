@@ -19,6 +19,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 double
 FtoC(double fahrenheit)
@@ -62,27 +63,27 @@ main(int argc, char *argv[])
 {
     double input_temp = atof(argv[2]);
 
-    if (argv[1] == "--FtoC")
+    if (strcmp(argv[1], "--FtoC") == 0)
     {
         printf("%6.3f = %6.3f\n", input_temp, FtoC(input_temp));
     } 
-    else if (argv[1] == "--FtoK")
+    else if (strcmp(argv[1],"--FtoK") == 0)
     {
         printf("%6.3f = %6.3f\n", input_temp, FtoK(input_temp));
     } 
-    else if (argv[1] == "--CtoF")
+    else if (strcmp(argv[1], "--CtoF") == 0)
     {
         printf("%6.3f = %6.3f\n", input_temp, CtoF(input_temp));
     }
-    else if (argv[1] == "--CtoK")
+    else if (strcmp(argv[1], "--CtoK") == 0)
     {
         printf("%6.3f = %6.3f\n", input_temp, CtoK(input_temp));
     } 
-    else if (argv[1] == "--KtoF")
+    else if (strcmp(argv[1], "--KtoF") == 0)
     {
         printf("%6.3f = %6.3f\n", input_temp, KtoF(input_temp));
     }
-    else if (argv[1] == "--KtoC")
+    else if (strcmp(argv[1], "--KtoC") == 0)
     {
         printf("%6.3f = %6.3f\n", input_temp, KtoC(input_temp));
     }
