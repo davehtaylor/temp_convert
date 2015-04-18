@@ -12,7 +12,7 @@
  *
  * An example usage would be:
  *
- *     temp_convert --f_to_c 32
+ *     temp_convert --FtoC 32
  *
  * The result would answer that 32 degrees fahrenheit is 0 degreess celsius.
  */
@@ -65,7 +65,7 @@ main(int argc, char *argv[])
     if (argc != 3)
     {
         printf("Usage: temp_convert CONVERSION_SPECIFIER TEMPERATURE\n"
-               "Example: temp_convert --f_to_c 32\n");
+               "Example: temp_convert --FtoC 32\n");
 
         return 1;
     }
