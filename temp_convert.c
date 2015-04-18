@@ -12,7 +12,7 @@
  *
  * An example usage would be:
  *
- *     temp_convert --FtoC 32
+ *     temp_convert --f_to_c 32
  *
  * The result would answer that 32 degrees fahrenheit is 0 degreess celsius.
  */
@@ -24,40 +24,39 @@
 #define DEG "°"
 
 double
-FtoC(double fahrenheit)
+f_to_c(double fahrenheit)
 {
     return (fahrenheit - 32.0) * 5.0 / 9.0;
 }
 
 double
-FtoK(double fahrenheit)
+f_to_k(double fahrenheit)
 {
-    return (FtoC(fahrenheit) + 273.15);
+    return (f_to_c(fahrenheit) + 273.15);
 }
 
 double
-CtoF(double celsius)
+c_to_f(double celsius)
 {
     return (celsius * 9.0 / 5.0) + 32;
 }
 
 double
-CtoK(double celsius)
+c_to_k(double celsius)
 {
     return celsius + 273.15;
 }
 
 double
-KtoC(double kelvin)
+k_to_c(double kelvin)
 {
     return kelvin - 273.15;
 }
 
 double
-KtoF(double kelvin)
+k_to_f(double kelvin)
 {
-
-    return (KtoC(kelvin) * 9.0 / 5.0) + 32;
+    return (k_to_c(kelvin) * 9.0 / 5.0) + 32;
 }
 
 int
@@ -66,7 +65,7 @@ main(int argc, char *argv[])
     if (argc != 3)
     {
         printf("Usage: temp_convert CONVERSION_SPECIFIER TEMPERATURE\n"
-               "Example: temp_convert --FtoC 32\n");
+               "Example: temp_convert --f_to_c 32\n");
 
         return 1;
     }
@@ -75,27 +74,33 @@ main(int argc, char *argv[])
 
     if (strcmp(argv[1], "--FtoC") == 0)
     {
-        printf("%6.3f %sF = %6.3f %sC\n", input_temp, DEG, FtoC(input_temp), DEG);
+        printf("%6.3f %sF = %6.3f %sC\n", 
+                input_temp, DEG, f_to_c(input_temp), DEG);
     } 
     else if (strcmp(argv[1],"--FtoK") == 0)
     {
-        printf("%6.3f %sF = %6.3f K\n", input_temp, DEG, FtoK(input_temp));
+        printf("%6.3f %sF = %6.3f K\n", 
+                input_temp, DEG, f_to_k(input_temp));
     } 
     else if (strcmp(argv[1], "--CtoF") == 0)
     {
-        printf("%6.3f %sC = %6.3f %sF\n", input_temp, DEG, CtoF(input_temp), DEG);
+        printf("%6.3f %sC = %6.3f %sF\n", 
+                input_temp, DEG, c_to_f(input_temp), DEG);
     }
     else if (strcmp(argv[1], "--CtoK") == 0)
     {
-        printf("%6.3f %sC = %6.3f K\n", input_temp, DEG, CtoK(input_temp));
+        printf("%6.3f %sC = %6.3f K\n", 
+                input_temp, DEG, c_to_k(input_temp));
     } 
     else if (strcmp(argv[1], "--KtoF") == 0)
     {
-        printf("%6.3f K = %6.3f %sF\n", input_temp, KtoF(input_temp), DEG);
+        printf("%6.3f K = %6.3f %sF\n", 
+                input_temp, k_to_f(input_temp), DEG);
     }
     else if (strcmp(argv[1], "--KtoC") == 0)
     {
-        printf("%6.3f K = %6.3f %sC\n", input_temp, KtoC(input_temp), DEG);
+        printf("%6.3f K = %6.3f %sC\n", 
+                input_temp, k_to_c(input_temp), DEG);
     }
     else
     {
