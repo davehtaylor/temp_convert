@@ -18,47 +18,78 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-float
-FtoC(float fahrenheit)
+double
+FtoC(double fahrenheit)
 {
     return (fahrenheit - 32.0) * 5.0 / 9.0;
 }
 
-float
-FtoK(float fahrenheit)
+double
+FtoK(double fahrenheit)
 {
-    return ((fahrenheit - 32.0) * 5.0 / 9.0) + 273.15;
+    return (FtoC(fahrenheit) + 273.15);
 }
 
-float
-CtoF(float celsius)
+double
+CtoF(double celsius)
 {
     return (celsius * 9.0 / 5.0) + 32;
 }
 
-float
-CtoK(float celsius)
+double
+CtoK(double celsius)
 {
     return celsius - 273.15;
 }
 
-float
-KtoF(float kelvin)
-{
-
-    return ((kelvin + 273.15) * 9.0 / 5.0) + 32;
-}
-
-float
-KtoC(float kelvin)
+double
+KtoC(double kelvin)
 {
     return kelvin + 273.15;
+}
+
+double
+KtoF(double kelvin)
+{
+
+    return (KtoC(kelvin) * 9.0 / 5.0) + 32;
 }
 
 int
 main(int argc, char *argv[])
 {
+    double input_temp = atof(argv[2]);
+
+    if (argv[1] == "--FtoC")
+    {
+        printf("%6.3f = %6.3f\n", input_temp, FtoC(input_temp));
+    } 
+    else if (argv[1] == "--FtoK")
+    {
+        printf("%6.3f = %6.3f\n", input_temp, FtoK(input_temp));
+    } 
+    else if (argv[1] == "--CtoF")
+    {
+        printf("%6.3f = %6.3f\n", input_temp, CtoF(input_temp));
+    }
+    else if (argv[1] == "--CtoK")
+    {
+        printf("%6.3f = %6.3f\n", input_temp, CtoK(input_temp));
+    } 
+    else if (argv[1] == "--KtoF")
+    {
+        printf("%6.3f = %6.3f\n", input_temp, KtoF(input_temp));
+    }
+    else if (argv[1] == "--KtoC")
+    {
+        printf("%6.3f = %6.3f\n", input_temp, KtoC(input_temp));
+    }
+    else
+    {
+        printf("Sorry, something went wrong.\n");
+    }
 
     return 0;
 }
