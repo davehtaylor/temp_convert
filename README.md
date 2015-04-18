@@ -7,10 +7,15 @@ temperature unit is input, and what output is desired. The options are
 as follows:
 
  --FtoC converts from fahrenheit to celsius
+
  --FtoK converts from fahrenheit to kelvin
+
  --CtoF converts from celsius to fahrenheit
+
  --CtoK converts from celsius to kelvin
+
  --KtoF converts from kelvin to fahrenheit
+
  --KtoC converts from kelvin to celsius
 
 An example usage would be:
