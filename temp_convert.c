@@ -63,15 +63,15 @@ KtoF(double kelvin)
 int
 main(int argc, char *argv[])
 {
-    double input_temp = atof(argv[2]);
-
     if (argc != 3)
     {
-        printf("Usage: temp_convert CONVERSION_SPECIFIER TEMPERATURE.");
-        printf("Example: temp_convert --FtoC 32");
+        printf("Usage: temp_convert CONVERSION_SPECIFIER TEMPERATURE\n");
+        printf("Example: temp_convert --FtoC 32\n");
 
         return 1;
     }
+
+    double input_temp = atof(argv[2]);
 
     if (strcmp(argv[1], "--FtoC") == 0)
     {
