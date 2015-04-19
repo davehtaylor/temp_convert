@@ -1,6 +1,6 @@
 # Temp Convert
 
-This is a command line application to convert temperatures, licensed 
+This is a command line application to convert temperatures, licensed
 under the GPLv3 (please see LICENSE.txt for more information). When the
 application is called, it is given an argument to show what type of
 temperature unit is input, and what output is desired. The options are
@@ -22,4 +22,6 @@ An example usage would be:
 
     temp_convert --FtoC 32
 
-The result would answer that 32 degrees fahrenheit is 0 degreess celsius.
+The resulting output would be:
+
+    32.000 °F =  0.000 °C
