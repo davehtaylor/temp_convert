@@ -66,8 +66,13 @@ main(int argc, char *argv[])
     {
         printf("Usage: temp_convert CONVERSION_SPECIFIER TEMPERATURE\n"
                "Example: temp_convert --FtoC 32\n\n"
-               "Possilbe options:\n --FtoC\n --FtoK\n "
-               "--CtoF\n --CtoK\n --KtoF\n --Ktoc\n\n");
+               "Possilbe options:\n" 
+               "--FtoC\n"
+               "--FtoK\n"
+               "--CtoF\n"
+               "--CtoK\n"
+               "--KtoF\n" 
+               "--Ktoc\n\n");
 
         return 1;
     }
