@@ -64,7 +64,7 @@ main(int argc, char *argv[])
 {
     if (argc != 3)
     {
-        printf("Usage: temp_convert CONVERSION_SPECIFIER TEMPERATURE\n"
+        printf("\nUsage: temp_convert CONVERSION_SPECIFIER TEMPERATURE\n"
                "Example: temp_convert --FtoC 32\n\n"
                "Possilbe options:\n" 
                "--FtoC\n"
