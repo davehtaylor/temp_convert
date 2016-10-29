@@ -9,6 +9,7 @@
 // --CtoK converts from celsius to kelvin
 // --KtoF converts from kelvin to fahrenheit
 // --KtoC converts from kelvin to celsius
+// --help shows program usage
 //
 // Usage example:
 //
@@ -17,10 +18,32 @@
 // Output: 
 //  
 //      32° fahrenheit is 0° celsius.
+// 
+// **********************************************************************
 
 
 #include <iostream>
 #include <string>       // std::string
+
+
+// Print program usage if user invokes help, argc < 3, or
+// argv is invalid
+// Arguments taken: argv[0], the program name
+// Returns: no return value. Prints program options and example usage as cerr
+static void print_usage(std::string program_name) {
+    std::cerr << "\nUsage: " << program_name << " <option> TEMP\n\n"
+              << "Options:\n"
+              << "\t--FtoC converts from fahrenheit to celsius\n"
+              << "\t--FtoK converts from fahrenheit to kelvin\n"
+              << "\t--CtoF converts from celsius to fahrenheit\n"
+              << "\t--CtoK converts from celsius to kelvin\n"
+              << "\t--KtoF converts from kelvin to fahrenheit\n"
+              << "\t--KtoC converts from kelvin to celsius\n"
+              << "\t--help shows program usage\n\n"
+              << "Example:\n"
+              << "\ttemp_convert --FtoC 32"
+              << std::endl;
+}
 
 
 // Convert fahrenheit to celsius
@@ -71,13 +94,33 @@ void KtoC(double kel) {
 }
 
 
-int main() {
+// MAIN
+int main(int argc, char* argv[]) {
 
-    double user_temp;
-    std::cout << "Please enter a temp to convert: ";
-    std::cin >> user_temp;
+    if (argc != 3) {
+        print_usage(argv[0]);
+        return 1;
+    } 
 
-    KtoC(user_temp);
+    std::string program_name = argv[0];
+    std::string option = argv[1];
+    double temp = atof(argv[2]);
+
+    if (option == "--FtoC") {
+        FtoC(temp);
+    } else if (option== "--FtoK") {
+        FtoK(temp);
+    } else if (option == "--CtoF") {
+        CtoF(temp);
+    } else if (option == "--CtoK") {
+        CtoK(temp);
+    } else if (option== "--KtoF") {
+        KtoF(temp);
+    } else if (option == "--KtoC") {
+        KtoC(temp);
+    } else {
+        print_usage(program_name);
+    }
 
     return 0;
 }
