@@ -1,7 +1,7 @@
 # Temp Convert
 
-This is a command line application to convert temperatures, written in C, 
-and licensed under the GPLv3 (please see LICENSE.txt for more information). 
+This is a command line application to convert temperatures, written in various
+languages, and licensed under the GPLv3 (please see LICENSE.txt for more information). 
 When the application is called, it is given an argument to show what type of
 temperature unit is input, and what output is desired. The options are
 as follows:
