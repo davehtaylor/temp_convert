@@ -23,44 +23,37 @@
 
 #define DEG "°"
 
-double
-f_to_c(double fahrenheit)
+double f_to_c(double fahrenheit)
 {
     return (fahrenheit - 32.0) * 5.0 / 9.0;
 }
 
-double
-f_to_k(double fahrenheit)
+double f_to_k(double fahrenheit)
 {
     return (f_to_c(fahrenheit) + 273.15);
 }
 
-double
-c_to_f(double celsius)
+double c_to_f(double celsius)
 {
     return (celsius * 9.0 / 5.0) + 32;
 }
 
-double
-c_to_k(double celsius)
+double c_to_k(double celsius)
 {
     return celsius + 273.15;
 }
 
-double
-k_to_c(double kelvin)
+double k_to_c(double kelvin)
 {
     return kelvin - 273.15;
 }
 
-double
-k_to_f(double kelvin)
+double k_to_f(double kelvin)
 {
     return (k_to_c(kelvin) * 9.0 / 5.0) + 32;
 }
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
     if (argc != 3)
     {
